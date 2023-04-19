@@ -1,0 +1,64 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+body { color: #424344;}
+
+.container1{
+    width: min(100% - 30px, 840px);
+    margin-inline: auto;
+}
+
+.banner {
+    width: 100%;
+    border-top-left-radius: .5em;
+    border-top-right-radius: .5em;
+    padding: 0;
+}
+.fotoperfil {
+    position:relative;
+    margin-top: -83%;
+    margin-left: 1em;
+    width: 60%;
+   
+}
+.logo {
+    width: 10em;
+    
+}
+.fuente1{
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+text-decoration-style: double rgba(209, 123, 10, 0.877);
+}
+
+.fuente2{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration-style: double red;
+}
+
+.contenedor{
+    color: coral;
+}
+
+
+    
+
+  @media only screen and (max-width: 767px) {
+    .fotoperfil {
+        position:relative;
+        margin-top: -32%;
+        margin-left: 1em;
+        width: 16%;
+        
+    }
+  }
+  
+  .background:{
+        radial-gradient:(circle #9b90d8 10%, transparent 11%);
+        background-size: 2em 2em;
+        background-color: #3f4143;
+        opacity: 0.9}
+
+
+       
+        
+   

@@ -1,0 +1,40 @@
+<section class="seccion">
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-3 text-center">PROYECTOS</h1>
+
+      <hr>
+      <div class="col-md-1">
+        <img src="/assets/img/iconos/agregar.svg" class="btn btn-outline-warning  btn-outline-info btn-floating m-1"
+          href="" role="button">
+      </div>
+
+      <ul class="items-list">
+        <li *ngFor="let proyecto of proyectosList">
+          <div class="row">
+            <div class="col-10 contenido ">
+              <a href="https://www.farmafullweb.com.ar/">
+                <h4>{{proyecto.title}}</h4>
+              </a>
+              <a href="https://appmaster.io/es">
+                <h4>{{proyecto.title1}}</h4>
+              </a>
+              <h4>{{proyecto.description}}</h4>
+            </div>
+            <div class="col-2 ">
+
+              <img src="/assets/img/iconos/editar.svg" class="btn btn-outline-warning btn-outline-info btn-floating m-1"
+                href="" role="button">
+
+              <img src="/assets/img/iconos/eliminar.svg"
+                class="btn btn-outline-warning btn-outline-info btn-floating m-1" href="" role="button">
+
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</section>
+<br>

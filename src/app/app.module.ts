@@ -4,32 +4,45 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 
 // importamos los componentes *
-import { ProyectosComponent } from './proyectos/proyectos.component';
-import { HabilidadesComponent } from './habilidades/habilidades.component';
-import { ExpeEduComponent } from './expe-edu/expe-edu.component';
-import { AcercadeComponent } from './acercade/acercade.component';
-import { PresentacionComponent } from './presentacion/presentacion.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component';
+import { ProyectosComponent } from './components/proyectos/proyectos.component';
+import { HabilidadesComponent } from './components/habilidades/habilidades.component';
+import { AcercadeComponent } from './components/acercade/acercade.component';
+import { PresentacionComponent } from './components/presentacion/presentacion.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
+//import { ExpeEduComponent } from './components/expeEdu/expeEdu.component';
 //(5a) Importamos el módulo HttpClient para obtener los recursos del servidor.
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { ExperienciaComponent } from './components/experiencia/experiencia.component';
+import { EducacionComponent } from './components/educacion/educacion.component';
+import { NewExperienciaComponent } from './new-experiencia.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProyectosComponent,
     HabilidadesComponent,
-    ExpeEduComponent,
+    //ExpeEduComponent,
     AcercadeComponent,
     PresentacionComponent,
     NavbarComponent,
     FooterComponent,
+    HomeComponent,
+    LoginComponent,
+    ExperienciaComponent,
+    EducacionComponent,
+    NewExperienciaComponent
   ],
   imports: [
     BrowserModule,
-    //(5b) lo especificamos aquí tambien para poder utilizarlo.
-    HttpClientModule
-  ],
+    FormsModule,
+    HttpClientModule,
+    AppRoutingModule 
+   ],
   providers: [],
   bootstrap: [AppComponent]
 })

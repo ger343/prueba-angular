@@ -1,28 +1,48 @@
-import { Component } from '@angular/core';
-import { PorfolioService } from '../servicios/porfolio.service';
+import { Component, OnInit } from '@angular/core';
+import { Skill } from 'src/app/model/skill';
+import { SkillService } from 'src/app/service/skill.service';
+import { TokenService } from 'src/app/service/token.service';
+//import { PorfolioService } from '../servicios/porfolio.service';
 
 @Component({
   selector: 'app-habilidades',
   templateUrl: './habilidades.component.html',
   styleUrls: ['./habilidades.component.css']
 })
-export class HabilidadesComponent {
 
-  miPorfolio: any;
-  habilidadesList: any;
 
-  constructor(private datosPorfolio:PorfolioService){}
+export class HabilidadesComponent implements OnInit {
+  skill: Skill[] = [];
 
-  ngOnInit():void{
-    this.datosPorfolio.obtenerDatos().subscribe(data =>{ //(8) me suscribo al observable
-      console.log(data);
+  constructor(private skillS: SkillService, private tokenService: TokenService) { }
+  isLogged = false;
+  
+  ngOnInit(): void {
+    this.cargarSkills();
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
+  }
 
-      this.miPorfolio = data; //(9b) asignamos a la variable definida
-      this.habilidadesList = data.skill;
-    });
+  cargarSkills(): void{
+    this.skillS.lista().subscribe(
+      data => {
+        this.skill = data;
+      }
+    )
+  }
+
+  delete(id: number){
+    if(id != undefined){
+      this.skillS.delete(id).subscribe(
+        data => {
+          this.cargarSkills();
+        }, err => {
+          alert("No se pudo borrar la skill");
+        }
+      )
+    }
   }
 }
-
-
-// al crear un componente desde CLI las importaciones y exportaciones
-// se hacen automaticamente

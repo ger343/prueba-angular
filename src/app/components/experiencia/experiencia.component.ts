@@ -28,6 +28,17 @@ import { TokenService } from 'src/app/service/token.service';
     cargarExperiencia(): void {
     this.sExperiencia.lista().subscribe(data => {this.expe = data;})
     }
+    delete(id?: number){
+      if(id != undefined){
+        this.sExperiencia.delete(id).subscribe(
+          data => {
+            this.cargarExperiencia();
+          }, err => {
+            alert("No se pudo borrar la experiencia");
+          }
+        )
+      }
+    }
     }
     
     

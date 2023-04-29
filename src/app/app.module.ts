@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 
 // importamos los componentes *
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
-import { HabilidadesComponent } from './components/habilidades/habilidades.component';
+import {HabilidadesComponent } from './components/habilidades/habilidades.component';
 import { AcercadeComponent } from './components/acercade/acercade.component';
 import { PresentacionComponent } from './components/presentacion/presentacion.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -20,6 +20,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { EducacionComponent } from './components/educacion/educacion.component';
 import { NewExperienciaComponent } from './new-experiencia.component';
+import { EditExperienciaComponent } from './components/experiencia/edit-experiencia.component';
+import { NeweducacionComponent } from './components/educacion/neweducacion.component';
+import { EditeducacionComponent } from './components/educacion/editeducacion.component';
+import { EditSkillComponent } from './components/habilidades/edit-skill.component';
+import { NewSkillComponent } from './components/habilidades/new-skill.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
   declarations: [
@@ -35,13 +41,19 @@ import { NewExperienciaComponent } from './new-experiencia.component';
     LoginComponent,
     ExperienciaComponent,
     EducacionComponent,
-    NewExperienciaComponent
+    NewExperienciaComponent,
+    EditExperienciaComponent,
+    NeweducacionComponent,
+    EditeducacionComponent,
+    EditSkillComponent,
+    NewSkillComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule 
+    AppRoutingModule,
+    NgCircleProgressModule.forRoot({}) 
    ],
   providers: [],
   bootstrap: [AppComponent]

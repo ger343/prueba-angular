@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 
-body { color: #424344;}
+body { font-family: 'Fira Sans', sans-serif;}
 
 .container1{
     width: min(100% - 30px, 840px);
